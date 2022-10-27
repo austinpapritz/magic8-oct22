@@ -7,9 +7,7 @@ const promptSection = document.getElementById('prompt-section');
 const answerSection = document.getElementById('answer-section');
 const answerP = document.getElementById('answer-p');
 const inputText = document.getElementById('input-text');
-/* State */
 
-// console.log(answers.length) // 19 answers
 const answers = [
     'Yes, definitely',
     'It is certain',
@@ -32,7 +30,7 @@ const answers = [
     'Very doubtful',
 ];
 
-/* Events */
+/* toggle hide class on button clicks, randomInt to generate answers*/
 
 function hideToggle() {
     promptSection.classList.toggle('hide');
@@ -46,10 +44,9 @@ submitBtn.addEventListener('click', () => {
     const randomAnswer = answers[randomInt];
 
     answerP.textContent = randomAnswer;
-
-    // clear input text last
 });
 
+/* Resets page on click 'Try Again', clears input text */
 againBtn.addEventListener('click', () => {
     inputText.value = '';
     hideToggle();
