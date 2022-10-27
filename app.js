@@ -6,7 +6,7 @@ const againBtn = document.getElementById('again-btn');
 const promptSection = document.getElementById('prompt-section');
 const answerSection = document.getElementById('answer-section');
 const answerP = document.getElementById('answer-p');
-
+const inputText = document.getElementById('input-text');
 /* State */
 
 // console.log(answers.length) // 19 answers
@@ -46,8 +46,11 @@ submitBtn.addEventListener('click', () => {
     const randomAnswer = answers[randomInt];
 
     answerP.textContent = randomAnswer;
+
+    // clear input text last
 });
 
 againBtn.addEventListener('click', () => {
+    inputText.value = '';
     hideToggle();
 });
