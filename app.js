@@ -1,11 +1,53 @@
 /* Imports */
 
 /* Get DOM Elements */
+const submitBtn = document.getElementById('submit-btn');
+const againBtn = document.getElementById('again-btn');
+const promptSection = document.getElementById('prompt-section');
+const answerSection = document.getElementById('answer-section');
+const answerP = document.getElementById('answer-p');
+const inputText = document.getElementById('input-text');
 
-/* State */
+const answers = [
+    'Yes, definitely',
+    'It is certain',
+    'It is decidedly so',
+    'Without a doubt',
+    'You may rely on it',
+    'As I see it, yes',
+    'Most Likely',
+    'Outlook good',
+    'Signs point to yes',
+    'Reply hazy, try again',
+    'Ask again later',
+    'Better not tell you now',
+    'Cannot predict now',
+    'Concentrate and ask again',
+    'Don’t count on it',
+    'My reply is no',
+    'My sources say no',
+    'Outlook not so good',
+    'Very doubtful',
+];
 
-/* Events */
+/* toggle hide class on button clicks, randomInt to generate answers*/
 
-/* Display Functions */
+function hideToggle() {
+    promptSection.classList.toggle('hide');
+    answerSection.classList.toggle('hide');
+}
 
-// (don't forget to call any display functions you want to run on page load!)
+submitBtn.addEventListener('click', () => {
+    hideToggle();
+
+    const randomInt = Math.floor(Math.random() * answers.length);
+    const randomAnswer = answers[randomInt];
+
+    answerP.textContent = randomAnswer;
+});
+
+/* Resets page on click 'Try Again', clears input text */
+againBtn.addEventListener('click', () => {
+    inputText.value = '';
+    hideToggle();
+});
