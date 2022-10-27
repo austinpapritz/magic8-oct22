@@ -9,6 +9,7 @@ const answerP = document.getElementById('answer-p');
 
 /* State */
 
+// console.log(answers.length) // 19 answers
 const answers = [
     'Yes, definitely',
     'It is certain',
@@ -39,6 +40,10 @@ function hideToggle() {
 }
 
 submitBtn.addEventListener('click', () => {
+    hideToggle();
+});
+
+againBtn.addEventListener('click', () => {
     hideToggle();
 });
 
