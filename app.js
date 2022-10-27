@@ -33,8 +33,13 @@ const answers = [
 
 /* Events */
 
+function hideToggle() {
+    promptSection.classList.toggle('hide');
+    answerSection.classList.toggle('hide');
+}
+
 submitBtn.addEventListener('click', () => {
-    console.log('submit clicked');
+    hideToggle();
 });
 
 /* Display Functions */
