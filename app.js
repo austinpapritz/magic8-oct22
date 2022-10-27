@@ -45,9 +45,9 @@ submitBtn.addEventListener('click', () => {
     const randomInt = Math.floor(Math.random() * answers.length);
     const randomAnswer = answers[randomInt];
 
-    againBtn.addEventListener('click', () => {
-        hideToggle();
-    });
-
     answerP.textContent = randomAnswer;
+});
+
+againBtn.addEventListener('click', () => {
+    hideToggle();
 });
