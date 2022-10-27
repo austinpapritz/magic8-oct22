@@ -41,12 +41,13 @@ function hideToggle() {
 
 submitBtn.addEventListener('click', () => {
     hideToggle();
+
+    const randomInt = Math.floor(Math.random() * answers.length);
+    const randomAnswer = answers[randomInt];
+
+    againBtn.addEventListener('click', () => {
+        hideToggle();
+    });
+
+    answerP.textContent = randomAnswer;
 });
-
-againBtn.addEventListener('click', () => {
-    hideToggle();
-});
-
-/* Display Functions */
-
-// (don't forget to call any display functions you want to run on page load!)
