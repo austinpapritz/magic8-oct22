@@ -10,6 +10,7 @@ body {
     background: var(--background);
     display: grid;
     grid-template-rows: auto 1fr;
+    
 }
 
 header {
@@ -24,6 +25,12 @@ header {
 
     background-color: var(--header-background);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    background-image: linear-gradient(
+        255deg, 
+        #27d86c 0%, 
+        #26caf8 50%, 
+        #c625d0 100%
+        );
 }
 
 header .logo {
@@ -38,21 +45,19 @@ main {
     display: none;
 }
 
-.button {
-    display: block;
-    flex: 1 1 auto;
-    margin: 10px;
-    padding: 20px;
-    border: 3px solid #aa00aa;
-    text-align: center;
-    text-transform: uppercase;
-    position: relative;
-    overflow: hidden;
-    transition: 0.3s;
-    border-radius: 30px;
+.btn-container {
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: start;
 }
 
-.button::after {
+.buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons::after {
     position: absolute;
     transition: 0.3s;
     content: '';
@@ -63,7 +68,106 @@ main {
     background: #f7f7f7;
 }
 
-.fill:hover,
-.fill:focus {
-    box-shadow: inset 0 0 0 2em var(--hover);
+.btn {
+    text-decoration: none;
+    padding: 20px 50px;
+    font-size: 1.25rem;
+    position: relative;
+    margin: 32px;
+}
+
+
+.btn-1 {
+    background: rgba(0, 0, 0);
+    color: rgb(224, 234, 247);
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.btn-1::after,
+.btn-1::before {
+    content: '';
+    position: absolute;
+    opacity: 0.3;
+    background: rgba(0, 0, 0);
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: transform 0.3s ease;
+}
+
+.btn-1:hover {
+    transform: translate(-12px, -12px);
+}
+
+.btn-1:hover::after {
+    transform: translate(6px, 6px);
+}
+
+.btn-1:hover::before {
+    transform: translate(12px, 12px);
+}
+
+.btn-2 {
+    color:rgba(0, 0, 0)
+}
+
+.btn-2::after, .btn-2::before {
+    border: 3px solid #000;
+    content: '';
+    position: absolute;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    left: 0;
+    bottom 0;
+    z-index: -1;
+    transition: transform 0.3s ease;
+}
+
+.btn-2:hover::after {
+    transform: translate(-5px, -5px);
+}
+.btn-2:hover::after {
+    transform: translate(5px, 5px);
+}
+
+.btn-3 {
+    overflow: hidden;
+    background: rgba(0, 0, 0);
+    color: rgb(224, 234, 247);
+    border-radius: 30px;
+    box-shadow: 0 0 0 0 rgba(143, 64, 248, 0.88), 
+                0 0 0 0 rgba(39, 200, 255, 0.88);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-3::after {
+    content: '';
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: -50px;
+    left: -100px;
+    background-color: rgb(231, 80, 80)
+    background-image: linear-gradient(
+        255deg, 
+        #27d86c 0%, 
+        #26caf8 50%, 
+        #c625d0 100%
+        );
+    z-index: -1;
+    transition: transform 0.5s ease;
+}
+
+.btn-3:hover {
+    transform: translate(0, -6px);
+    box-shadow: 10px -10px 25px 0 rgba(143, 64, 248, 0.88), 
+                -10px 10px 25px 0 rgba(39, 200, 255, 0.88);
+}
+
+.btn-3:hover::after {
+    transform: rotate(150deg);
 }
