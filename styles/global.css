@@ -38,7 +38,7 @@ main {
     display: none;
 }
 
-button {
+.button {
     display: block;
     flex: 1 1 auto;
     margin: 10px;
@@ -49,9 +49,10 @@ button {
     position: relative;
     overflow: hidden;
     transition: 0.3s;
+    border-radius: 30px;
 }
 
-button::after {
+.button::after {
     position: absolute;
     transition: 0.3s;
     content: '';
